@@ -44,7 +44,7 @@ public class EnemyMove : MonoBehaviour
                 {
                     damage = Random.Range(minDamage, maxDamage + 1);
                     attackTimer = defaultAttackTimer;
-                    print("The attack did " + damage + " damage");
+                    //print("The attack did " + damage + " damage");
                 }
             }
         }
