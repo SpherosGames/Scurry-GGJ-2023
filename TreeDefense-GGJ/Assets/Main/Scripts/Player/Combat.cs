@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Combat : MonoBehaviour
 {
@@ -10,31 +11,34 @@ public class Combat : MonoBehaviour
     public Transform firePoint;
     [SerializeField]
     public GameObject bulletToFire;
+    [SerializeField] private float minAngle;
+    [SerializeField] private float maxAngle;
     public float firePower;
     bool timerOn = true;
     bool canShoot = true;
     public float fireRate = 1;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Vector2 mousePos;
+    public Camera cam;
+    
 
-    // Update is called once per frame
+    public void Start()
+    {
+         
+    }
     void Update()
     {
-        Gun.RotateAround(Vector3.forward, Input.GetAxis("Vertical") * Time.deltaTime);
+        
         if (canShoot)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 GameObject b = Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
                 b.GetComponent<Rigidbody2D>().AddForce(firePoint.up * firePower, ForceMode2D.Impulse);
                 canShoot = false;
                 timerOn = true;
-
             }
         }
+
         if (timerOn)
         {
             fireRate -= Time.deltaTime; // Shoottimer gaat elke keer 1 naar beneden
@@ -45,7 +49,8 @@ public class Combat : MonoBehaviour
                 timerOn = false;
             }
         }
-       
     }
+ 
 
-}
+   
+ }
