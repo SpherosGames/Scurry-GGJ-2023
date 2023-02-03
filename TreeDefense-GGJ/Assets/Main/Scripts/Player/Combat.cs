@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using TMPro;
 
 public class Combat : MonoBehaviour
 {
@@ -11,15 +12,14 @@ public class Combat : MonoBehaviour
     public Transform firePoint;
     [SerializeField]
     public GameObject bulletToFire;
-    [SerializeField] private float minAngle;
-    [SerializeField] private float maxAngle;
     public float firePower;
     bool timerOn = true;
     bool canShoot = true;
     public float fireRate = 1;
-    public Vector2 mousePos;
-    public Camera cam;
-    
+    public TMP_Text Counter;
+    public float ammoCount = 5;
+
+
 
     public void Start()
     {
@@ -27,13 +27,14 @@ public class Combat : MonoBehaviour
     }
     void Update()
     {
-        
+        Counter.text = ammoCount.ToString(); // UI spul, teveel werk om het in een andere script te doen.. het is een gamejam.
         if (canShoot)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && ammoCount != 0)
             {
                 GameObject b = Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
                 b.GetComponent<Rigidbody2D>().AddForce(firePoint.up * firePower, ForceMode2D.Impulse);
+                ammoCount--;
                 canShoot = false;
                 timerOn = true;
             }
