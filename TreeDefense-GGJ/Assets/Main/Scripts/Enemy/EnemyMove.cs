@@ -52,6 +52,7 @@ public class EnemyMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Tree Detection
         if (collision.CompareTag("Tree"))
         {
             canMove = false;
