@@ -15,7 +15,8 @@ public class RunAnimation : MonoBehaviour
 
     private void Update()
     {
-        if (rb.velocity.magnitude > 0.1f)
+        Debug.Log(Input.GetAxis("Horizontal"));
+        if (Input.GetAxis("Horizontal") > 0.1f || Input.GetAxis("Horizontal") < -0.1f)
         {
             animator.SetBool("isMoving", true);
         }
