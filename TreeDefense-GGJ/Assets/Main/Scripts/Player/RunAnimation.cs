@@ -24,5 +24,14 @@ public class RunAnimation : MonoBehaviour
         {
             animator.SetBool("isMoving", false);
         }
+
+        if (Input.GetAxis("Horizontal") > 0.1f)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (Input.GetAxis("Horizontal") < -0.1f)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 }
