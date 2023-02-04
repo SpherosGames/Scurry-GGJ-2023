@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1728515954533612837}
   - component: {fileID: 1728515954533612836}
   - component: {fileID: -7565831041616029900}
+  - component: {fileID: 1015554503705966560}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Wall
@@ -137,5 +138,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87aacbd572d1344c813c07bbe60c31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  removeButton: {fileID: 0}
-  buttons: []
+  removeButtons: []
+--- !u!114 &1015554503705966560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728515954533612835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466780d5349d2594684f095190a2b134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildPosition: 0
