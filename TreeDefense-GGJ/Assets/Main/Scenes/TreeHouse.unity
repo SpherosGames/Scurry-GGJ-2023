@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &185867085 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2123798626, guid: a580eeba692241a41ab384231c1898da, type: 3}
-  m_PrefabInstance: {fileID: 1980177366}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &389209204
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7f1656632771a468b74753094402f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 185867085}
+  interactable: {fileID: 2090184145}
   signDialog: {fileID: 1836631185}
   backGroundDialog: {fileID: 1399748075}
   dialogueText: '"Pops taught me how to walk! A to go left, and D to go right."'
@@ -652,7 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7f1656632771a468b74753094402f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 185867085}
+  interactable: {fileID: 2090184145}
   signDialog: {fileID: 1836631185}
   backGroundDialog: {fileID: 1399748075}
   dialogueText: '"Grandma told me about the war between us and the humans, They have
@@ -1069,6 +1058,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6167159761549315916, guid: a580eeba692241a41ab384231c1898da, type: 3}
+      propertyPath: m_Name
+      value: E
+      objectReference: {fileID: 0}
     - target: {fileID: 7090597389362455121, guid: a580eeba692241a41ab384231c1898da, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
@@ -1129,7 +1122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7f1656632771a468b74753094402f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 185867085}
+  interactable: {fileID: 2090184145}
   signDialog: {fileID: 1836631185}
   backGroundDialog: {fileID: 1399748075}
   dialogueText: '"Ma can build amazing towers at the workshop upstairs! She made
@@ -1175,3 +1168,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2090184145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3954919663893616409, guid: a580eeba692241a41ab384231c1898da, type: 3}
+  m_PrefabInstance: {fileID: 1980177366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
