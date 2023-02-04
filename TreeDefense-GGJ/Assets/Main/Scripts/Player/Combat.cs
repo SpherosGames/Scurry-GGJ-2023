@@ -6,7 +6,7 @@ using TMPro;
 
 public class Combat : MonoBehaviour
 {
-    [SerializeField]
+    /*[SerializeField]
    public Transform Gun;
     [SerializeField]
     public Transform firePoint;
@@ -50,7 +50,7 @@ public class Combat : MonoBehaviour
                 timerOn = false;
             }
         }
-    }
+    }*/
  
 
    
