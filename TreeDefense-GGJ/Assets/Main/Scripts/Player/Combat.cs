@@ -6,11 +6,11 @@ using TMPro;
 
 public class Combat : MonoBehaviour
 {
-    [SerializeField]
-   public Transform Gun;
-    [SerializeField]
-    public Transform firePoint;
-    [SerializeField]
+    //[SerializeField]
+   //public Transform Gun;
+    //[SerializeField]
+    //public Transform firePoint;
+  //  [SerializeField]
     public GameObject bulletToFire;
     public float firePower;
     bool timerOn = true;
