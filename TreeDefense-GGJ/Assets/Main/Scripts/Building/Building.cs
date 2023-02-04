@@ -12,7 +12,7 @@ public class Building : MonoBehaviour
     [SerializeField] private GameObject[] buttons;
     [SerializeField] private TMP_Text warningText;
 
-    private GameObject[] spawnedBuildings = new GameObject[3];
+    private GameObject[] spawnedBuildings = new GameObject[4];
 
     private bool canBuild;
     private bool isChoosingBuilding;
@@ -22,7 +22,6 @@ public class Building : MonoBehaviour
     private GameObject buildingToSpawn;
 
     int buildPositionIndexNum;
-    //int removePositionIndexNum;
 
     public void Build(GameObject building)
     {
