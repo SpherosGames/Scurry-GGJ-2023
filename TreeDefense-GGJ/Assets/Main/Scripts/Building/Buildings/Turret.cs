@@ -18,7 +18,7 @@ public class Turret : MonoBehaviour
     private void Awake()
     {
         building = GameObject.Find("Building").GetComponent<Building>();
-        nut = GameObject.Find("Nuts").GetComponent<Nuts>();
+        nut = GameObject.Find("/Nuts").GetComponent<Nuts>();
 
         shootingTimer = shootingTimerDefault;
     }
