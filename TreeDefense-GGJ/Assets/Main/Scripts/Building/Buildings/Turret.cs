@@ -6,7 +6,7 @@ public class Turret : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletSpawnPosition;
-    [SerializeField] private int bulletSpeed;
+    [SerializeField] private float bulletSpeed;
     [SerializeField] private float shootingTimerDefault;
     [SerializeField] private int health;
     [SerializeField] private Building building;

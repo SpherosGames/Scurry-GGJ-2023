@@ -9,6 +9,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private int maxDamage = 3;
     [SerializeField] private int defaultAttackTimer = 1;
     [SerializeField] private Nuts nuts;
+    [SerializeField] private Animator animator;
 
     private bool canMove = true;
     private bool canAttack = false;
@@ -23,6 +24,8 @@ public class EnemyMove : MonoBehaviour
     private void Start()
     {
         nuts = GameObject.Find("Nuts").GetComponent<Nuts>();
+
+        animator = GetComponent<Animator>();
 
         attackTimer = defaultAttackTimer;
     }
@@ -41,6 +44,8 @@ public class EnemyMove : MonoBehaviour
         //Enemy Attack
         if (canAttack)
         {
+            animator.SetBool("IsCutting", true);
+
             if (attackTimerOn)
             {
                 attackTimer -= Time.deltaTime;
@@ -73,6 +78,10 @@ public class EnemyMove : MonoBehaviour
                     }
                 }
             }
+        }
+        else
+        {
+            animator.SetBool("IsCutting", false);
         }
     }
 

@@ -3685,10 +3685,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTransform: {fileID: 1827178949}
   enemyParent: {fileID: 807864670}
-  enemyPrefab: {fileID: 5948863777785492040, guid: 79df6630cf3bacb4da7598c79965737a, type: 3}
+  enemyPrefab: {fileID: 5480632902398791319, guid: e1a18e65f8a12f445ab5036ca0e66571, type: 3}
   spawnTimerDefault:
-  - 5
-  - 3
+  - 1
+  - 1
   - 1
   amountOfWaves: 3
   amountOfEnemysForWave: 03000000050000000a000000

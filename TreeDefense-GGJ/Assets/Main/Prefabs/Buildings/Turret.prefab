@@ -73,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 7608952284618031430, guid: db3c7605101bcc3419642c672d14cc3a, type: 3}
   bulletSpawnPosition: {fileID: 6832663025440507912}
-  bulletSpeed: 1
+  bulletSpeed: 5
   shootingTimerDefault: 0.1
   health: 10
   building: {fileID: 0}
@@ -209,9 +209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   removeButtons: []
-  mouseHoverLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &1015554503705966560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4735358208948853004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.66, y: 0.304, z: 0}
+  m_LocalPosition: {x: -0.923, y: 0.304, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

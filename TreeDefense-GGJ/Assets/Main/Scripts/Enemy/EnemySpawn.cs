@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-
     [SerializeField] private Transform spawnTransform;
     [SerializeField] private Transform enemyParent;
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private float[] spawnTimerDefault;
     [SerializeField] private float amountOfWaves;
     [SerializeField] private int[] amountOfEnemysForWave;
+
+    private int amountOfEnemiesKilled;
+    private int currentAmountOfEnemiesSpawned;
+    private int totalEnemiesCurrentWave;
 
     private bool canSpawn = true;
 
@@ -22,6 +25,7 @@ public class EnemySpawn : MonoBehaviour
     private void Start()
     {
         spawnTimer = spawnTimerDefault[currentWaveNum];
+        totalEnemiesCurrentWave = amountOfEnemysForWave[currentWaveNum];
     }
 
     private void Update()
@@ -37,17 +41,26 @@ public class EnemySpawn : MonoBehaviour
                     spawnTimer = spawnTimerDefault[currentWaveNum];
                     Instantiate(enemyPrefab, spawnTransform.position, Quaternion.identity, enemyParent);
                     amountOfEnemysForWave[currentWaveNum]--;
+                    currentAmountOfEnemiesSpawned++;
                 }
             }
         }
 
-        if (amountOfEnemysForWave[currentWaveNum] <= 0)
+        if (currentAmountOfEnemiesSpawned == totalEnemiesCurrentWave && amountOfEnemiesKilled == totalEnemiesCurrentWave)
         {
+            totalEnemiesCurrentWave = amountOfEnemysForWave[currentWaveNum];
+            currentAmountOfEnemiesSpawned = 0;
+            amountOfEnemiesKilled = 0;
             currentWaveNum++;
             if (currentWaveNum >= amountOfWaves)
             {
                 print("Game won!");
             }
         }
+    }
+
+    public void IncreaseEnemiesKilled()
+    {
+        amountOfEnemiesKilled++;
     }
 }

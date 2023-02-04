@@ -5,6 +5,12 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int health;
+    [SerializeField] private EnemySpawn enemySpawn;
+
+    private void Awake()
+    {
+        enemySpawn = GameObject.Find("/EnemySpawner").GetComponent<EnemySpawn>();
+    }
 
     public void RemoveHealth(int damage)
     {
@@ -15,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (health <= 0)
         {
+            enemySpawn.IncreaseEnemiesKilled();
             Destroy(gameObject);
         }
     }
