@@ -29,13 +29,13 @@ public class Interact : MonoBehaviour
     {
 
         if (Input.GetKey(KeyCode.E) && interactable.enabled == true)
-            {
+        {
             signDialog.text = dialogueText;
-                signDialog.enabled = true;
+            signDialog.enabled = true;
             backGroundDialog.enabled = true;
-        
-            }
-        
+
+        }
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -43,5 +43,5 @@ public class Interact : MonoBehaviour
         signDialog.enabled = false;
         backGroundDialog.enabled = false;
     }
-
 }
+    
