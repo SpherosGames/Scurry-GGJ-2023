@@ -20,6 +20,7 @@ public class Building : MonoBehaviour
     private GameObject buildingToSpawn;
 
     int buildPositionIndexNum;
+    int removePositionIndexNum;
 
     public void Build(GameObject building)
     {
@@ -61,7 +62,7 @@ public class Building : MonoBehaviour
         }
     }
 
-    public void RemoveBuilding()
+    public void RemoveBuilding(int removeIndex)
     {
         if (isChoosingBuilding)
         {
@@ -71,10 +72,11 @@ public class Building : MonoBehaviour
         }
         else
         {
+            removePositionIndexNum = removeIndex;
             if (SelectPanel)
             {
                 Destroy(SelectPanel);
-                buttons[buildPositionIndexNum].SetActive(true);
+                buttons[removeIndex].SetActive(true);
             }
             else
             {
