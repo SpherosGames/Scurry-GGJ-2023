@@ -4883,6 +4883,7 @@ GameObject:
   - component: {fileID: 2718316769983821195}
   - component: {fileID: 2718316769983821198}
   - component: {fileID: -8442118320808645796}
+  - component: {fileID: -3545482363316682184}
   m_Layer: 0
   m_Name: Mine
   m_TagString: Untagged
@@ -4898,8 +4899,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2718316769983821194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: -3.77, z: 0}
-  m_LocalScale: {x: 1, y: 0.3696, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2718316770541664376}
@@ -4948,8 +4949,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.20266359, g: 0.3962264, b: 0.027661074, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0ce1a2835ebd3a14da83fc9023ff8216, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4976,7 +4977,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5001,6 +5002,8 @@ MonoBehaviour:
   mineCDText: {fileID: 2718316770621177409}
   Explosion: {fileID: 2718316770159215087}
   ps: {fileID: 2108139115}
+  range: 0.5
+  building: {fileID: 0}
 --- !u!114 &-8442118320808645796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5013,7 +5016,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466780d5349d2594684f095190a2b134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildPosition: 0
+  buildPosition: 2
+--- !u!95 &-3545482363316682184
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718316769983821194}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99d4b9d64131bcd498d7ff52afbf7628, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2718316770159215086
 GameObject:
   m_ObjectHideFlags: 0
@@ -5024,6 +5047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2718316770159215084}
   - component: {fileID: 2718316770159215087}
+  - component: {fileID: 8126344796380800358}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -5062,7 +5086,20 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.090837
+  m_Radius: 0.5
+--- !u!114 &8126344796380800358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718316770159215086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1b2c0b3844869419564d6fb899479e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1000
 --- !u!1 &2718316770541664379
 GameObject:
   m_ObjectHideFlags: 0
@@ -5100,8 +5137,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0, y: 2.3}
-  m_SizeDelta: {x: 4.1025, y: 1.496}
+  m_AnchoredPosition: {x: 0, y: 0.7158}
+  m_SizeDelta: {x: 2.6834, y: 0.325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2718316770541664383
 Canvas:
@@ -5176,7 +5213,7 @@ GameObject:
   - component: {fileID: 2718316770621177414}
   - component: {fileID: 2718316770621177409}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Timer Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5190,8 +5227,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2718316770621177411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0018343367}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2718316770541664376}
@@ -5200,7 +5237,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 4.3845, y: 1.1452}
+  m_SizeDelta: {x: 2.4931, y: 0.56913}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2718316770621177414
 CanvasRenderer:
@@ -5230,7 +5267,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5257,8 +5294,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
