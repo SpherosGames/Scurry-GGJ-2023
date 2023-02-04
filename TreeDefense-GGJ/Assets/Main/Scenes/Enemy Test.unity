@@ -706,8 +706,12 @@ MonoBehaviour:
   spawnTransform: {fileID: 1938432805}
   enemyParent: {fileID: 822032235}
   enemyPrefab: {fileID: 5948863777785492040, guid: 79df6630cf3bacb4da7598c79965737a, type: 3}
-  spawnTimerDefault: 1
-  amountOfEnemysForWave: 3
+  spawnTimerDefault:
+  - 5
+  - 3
+  - 1
+  amountOfWaves: 3
+  amountOfEnemysForWave: 03000000050000000a000000
 --- !u!1 &719418091
 GameObject:
   m_ObjectHideFlags: 0
@@ -3533,7 +3537,7 @@ MonoBehaviour:
   chooseBuildingPanel: {fileID: 10584950}
   buildingParent: {fileID: 1359514849}
   buildCanvas: {fileID: 1236884351}
-  SelectPanel: {fileID: 10584950}
+  spawnedBuilding: {fileID: 0}
   buttons:
   - {fileID: 800750561}
   - {fileID: 1781256261}

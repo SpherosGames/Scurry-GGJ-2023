@@ -86,10 +86,13 @@ public class Building : MonoBehaviour
         }
     }
 
+    public void DestroyBuilding(int removeIndex)
+    {
+        Destroy(spawnedBuildings[removeIndex]);
+    }
+
     private void Update()
     {
-        print(isChoosingBuilding);
-
         if (canBuild)
         {
             chooseBuildPanelActive = false;

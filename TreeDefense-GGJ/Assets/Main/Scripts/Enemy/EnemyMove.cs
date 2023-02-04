@@ -8,6 +8,7 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private int minDamage = 1;
     [SerializeField] private int maxDamage = 3;
     [SerializeField] private int defaultAttackTimer = 1;
+    [SerializeField] private Nuts nuts;
 
     private bool canMove = true;
     private bool canAttack = false;
@@ -17,8 +18,12 @@ public class EnemyMove : MonoBehaviour
 
     private int damage;
 
+    private GameObject objectToDamage;
+
     private void Start()
     {
+        nuts = GameObject.Find("Nuts").GetComponent<Nuts>();
+
         attackTimer = defaultAttackTimer;
     }
 
@@ -44,7 +49,28 @@ public class EnemyMove : MonoBehaviour
                 {
                     damage = Random.Range(minDamage, maxDamage + 1);
                     attackTimer = defaultAttackTimer;
-                    //print("The attack did " + damage + " damage");
+                    if (objectToDamage)
+                    {
+                        if (objectToDamage.CompareTag("Wall"))
+                        {
+                            objectToDamage.GetComponent<Wall>().RemoveHealth(damage);
+                        }
+
+                        if (objectToDamage.CompareTag("Turret"))
+                        {
+                            objectToDamage.GetComponent<Turret>().RemoveHealth(damage);
+                        }
+
+                        if (objectToDamage.CompareTag("Tree"))
+                        {
+                            nuts.RemoveNuts(damage);
+                        }
+                    }
+                    else
+                    {
+                        canMove = true;
+                        canAttack = false;
+                    }
                 }
             }
         }
@@ -52,11 +78,71 @@ public class EnemyMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Tree Detection
         if (collision.CompareTag("Tree"))
         {
             canMove = false;
             canAttack = true;
+            objectToDamage = collision.gameObject;
+        }
+
+        //if (collision.gameObject.CompareTag("Enemy"))
+        //{
+        //    print("Enemy in front of me!");
+        //    collision.gameObject.GetComponent<EnemyMove>().canMove = false;
+        //    canMove = false;
+        //    canAttack = false;
+        //    objectToDamage = null;
+        //}
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Tree"))
+        {
+            canMove = true;
+            canAttack = false;
+            objectToDamage = null;
+        }
+
+        //if (collision.CompareTag("Enemy"))
+        //{
+        //    canMove = true;
+        //    canAttack = false;
+        //    objectToDamage = null;
+        //}
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            canMove = false;
+            canAttack = true;
+            objectToDamage = collision.gameObject;
+        }
+
+        if (collision.gameObject.CompareTag("Turret"))
+        {
+            canMove = false;
+            canAttack = true;
+            objectToDamage = collision.gameObject;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            canMove = true;
+            canAttack = false;
+            objectToDamage = null;
+        }
+
+        if (collision.gameObject.CompareTag("Turret"))
+        {
+            canMove = true;
+            canAttack = false;
+            objectToDamage = null;
         }
     }
 }
