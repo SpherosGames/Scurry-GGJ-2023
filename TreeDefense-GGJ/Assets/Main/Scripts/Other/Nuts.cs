@@ -11,5 +11,21 @@ public class Nuts : MonoBehaviour
     private void Update()
     {
         nutCountText.text = "Nuts : " + nutCount.ToString();
+
+        if (nutCount <= 0)
+        {
+            print("The Tree DIED!");
+            Time.timeScale = 0;
+        }
+    }
+
+    public void AddNuts(int amount)
+    {
+        nutCount += amount;
+    }
+
+    public void RemoveNuts(int amount)
+    {
+        nutCount -= amount;
     }
 }
