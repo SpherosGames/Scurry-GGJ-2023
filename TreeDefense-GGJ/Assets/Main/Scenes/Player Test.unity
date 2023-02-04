@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7f1656632771a468b74753094402f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: {fileID: 0}
+  interactable: {fileID: 1083413902}
   signDialog: {fileID: 943664499}
 --- !u!1001 &487927989
 PrefabInstance:
@@ -796,6 +796,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943664497}
   m_CullTransparentMesh: 1
+--- !u!114 &1083413902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2123798626, guid: a580eeba692241a41ab384231c1898da, type: 3}
+  m_PrefabInstance: {fileID: 487927989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1093878143
 GameObject:
   m_ObjectHideFlags: 0
