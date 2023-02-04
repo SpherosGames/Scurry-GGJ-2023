@@ -10,7 +10,7 @@ public class Nuts : MonoBehaviour
 
     private void Update()
     {
-        nutCountText.text = "Nuts : " + nutCount.ToString();
+        nutCountText.text = " : " + nutCount.ToString();
 
         if (nutCount <= 0)
         {
