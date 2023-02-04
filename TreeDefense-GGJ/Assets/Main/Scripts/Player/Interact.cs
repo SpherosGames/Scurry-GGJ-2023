@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class Interact : MonoBehaviour
 {
-    public Image interactable; // Dit is de "E" van de squirrel
-    public TMP_Text signDialog; // dialog van een sign 
-    public Image backGroundDialog;
-    public string dialogueText;
+    [SerializeField] Image interactable; // Dit is de "E" van de squirrel
+    [SerializeField] TMP_Text signDialog; // dialog van een sign 
+    [SerializeField] Image backGroundDialog;
+    [SerializeField] string dialogueText;
 
     public void Start()
     {
@@ -29,13 +29,13 @@ public class Interact : MonoBehaviour
     {
 
         if (Input.GetKey(KeyCode.E) && interactable.enabled == true)
-            {
+        {
             signDialog.text = dialogueText;
-                signDialog.enabled = true;
+            signDialog.enabled = true;
             backGroundDialog.enabled = true;
-        
-            }
-        
+
+        }
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -43,5 +43,4 @@ public class Interact : MonoBehaviour
         signDialog.enabled = false;
         backGroundDialog.enabled = false;
     }
-
 }

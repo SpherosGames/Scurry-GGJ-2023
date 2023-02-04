@@ -8,9 +8,10 @@ public class ShowRemove : MonoBehaviour
 
     private void Awake()
     {
-        removeButtons.Add(transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton").gameObject);
-        removeButtons.Add(transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton (1)").gameObject);
+        removeButtons.Add(transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton (3)").gameObject);
         removeButtons.Add(transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton (2)").gameObject);
+        removeButtons.Add(transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton (1)").gameObject);
+        removeButtons.Add(transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton").gameObject);
     }
 
     private void OnMouseEnter()

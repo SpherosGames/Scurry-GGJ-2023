@@ -4884,6 +4884,7 @@ GameObject:
   - component: {fileID: 2718316769983821198}
   - component: {fileID: -8442118320808645796}
   - component: {fileID: -3545482363316682184}
+  - component: {fileID: -9195454114617281135}
   m_Layer: 0
   m_Name: Mine
   m_TagString: Untagged
@@ -5016,7 +5017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466780d5349d2594684f095190a2b134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildPosition: 2
+  buildPosition: 0
 --- !u!95 &-3545482363316682184
 Animator:
   serializedVersion: 5
@@ -5037,6 +5038,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-9195454114617281135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2718316769983821194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87aacbd572d1344c813c07bbe60c31f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  removeButtons: []
 --- !u!1 &2718316770159215086
 GameObject:
   m_ObjectHideFlags: 0
