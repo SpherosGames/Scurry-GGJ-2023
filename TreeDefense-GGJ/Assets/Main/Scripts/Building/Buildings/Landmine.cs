@@ -5,23 +5,30 @@ using UnityEngine;
 
 public class Landmine : MonoBehaviour
 {
-    
-    public float mineCD = 3;
+    private Animator animator;
     private SpriteRenderer MineMesh;
-    public TMP_Text mineCDText;
     private bool isTriggered;
-    public CircleCollider2D Explosion;
-    public ParticleSystem ps;
+    [SerializeField] float mineCD = 3;
+    [SerializeField] TMP_Text mineCDText;
+    [SerializeField] CircleCollider2D Explosion;
+    [SerializeField] ParticleSystem ps;
+    [SerializeField] private float range;
+    [SerializeField] private Building building;
+
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
         mineCDText.enabled = false;
         Explosion.enabled = false;
-        MineMesh = gameObject.GetComponent<SpriteRenderer>();
+        MineMesh = GetComponent<SpriteRenderer>();
+        Explosion.radius = range;
+        building = GameObject.Find("/Building").GetComponent<Building>();
     }
 
     void Update()
     {
+        animator.SetBool("IsArmed", isTriggered);
+
         mineCDText.text = Mathf.Round(mineCD).ToString();
         if (isTriggered && mineCD > 0)
         {
@@ -37,9 +44,10 @@ public class Landmine : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             isTriggered = true;
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
@@ -49,8 +57,9 @@ public class Landmine : MonoBehaviour
         Explosion.enabled = true;
         Invoke("Destroyed", 1f);
     }
+
     private void Destroyed()
     {
-        Destroy(gameObject);
+        building.DestroyBuilding(GetComponent<BuildPositionIndex>().GetBuildPosition());
     }
 }
