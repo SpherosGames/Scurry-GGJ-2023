@@ -15,7 +15,7 @@ public class Scenes : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene("Main Level", LoadSceneMode.Single);
+        SceneManager.LoadScene("Enemy Test", LoadSceneMode.Single);
     }
     public void Options()
     {
