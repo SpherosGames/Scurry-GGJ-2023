@@ -188,3 +188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   enemySpawn: {fileID: 0}
+  nut: {fileID: 0}
+  minNut: 3
+  maxNut: 10

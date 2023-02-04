@@ -30,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
         {
             nutDropAmount = Random.Range(minNut, maxNut + 1);
             nut.AddNuts(nutDropAmount);
+            print(nutDropAmount);
             enemySpawn.IncreaseEnemiesKilled();
             Destroy(gameObject);
         }
