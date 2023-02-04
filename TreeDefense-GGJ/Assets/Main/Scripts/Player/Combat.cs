@@ -27,7 +27,7 @@ public class Combat : MonoBehaviour
     }
     void Update()
     {
-        Counter.text = ammoCount.ToString(); // UI spul, teveel werk om het in een andere script te doen.. het is een gamejam.
+//        Counter.text = ammoCount.ToString(); // UI spul, teveel werk om het in een andere script te doen.. het is een gamejam.
         if (canShoot)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && ammoCount != 0)
