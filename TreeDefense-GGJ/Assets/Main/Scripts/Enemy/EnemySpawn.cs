@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
@@ -9,7 +10,9 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private float[] spawnTimerDefault;
     [SerializeField] private float amountOfWaves;
+    [SerializeField] private float timeBetweenWaves;
     [SerializeField] private int[] amountOfEnemysForWave;
+    [SerializeField] private TMP_Text waveInfoText;
 
     private int amountOfEnemiesKilled;
     private int currentAmountOfEnemiesSpawned;
@@ -22,16 +25,24 @@ public class EnemySpawn : MonoBehaviour
 
     private int currentWaveNum;
 
+    private bool doOnce = true;
+
+    //private bool timeBetweenWavesTimerOn;
+    private float timeBetweenWavesTimer;
+
     private void Start()
     {
         spawnTimer = spawnTimerDefault[currentWaveNum];
         totalEnemiesCurrentWave = amountOfEnemysForWave[currentWaveNum];
+        timeBetweenWavesTimer = timeBetweenWaves;
     }
 
     private void Update()
     {
         if (canSpawn)
         {
+            waveInfoText.text = "Spawning Enemies...";
+
             if (spawnTimerOn && amountOfEnemysForWave[currentWaveNum] > 0)
             {
                 spawnTimer -= Time.deltaTime;
@@ -46,12 +57,32 @@ public class EnemySpawn : MonoBehaviour
             }
         }
 
+        if (currentAmountOfEnemiesSpawned == totalEnemiesCurrentWave)
+        {
+            canSpawn = false;
+            waveInfoText.text = "Wave in progress...";
+        }
+
         if (currentAmountOfEnemiesSpawned == totalEnemiesCurrentWave && amountOfEnemiesKilled == totalEnemiesCurrentWave)
         {
-            totalEnemiesCurrentWave = amountOfEnemysForWave[currentWaveNum];
-            currentAmountOfEnemiesSpawned = 0;
-            amountOfEnemiesKilled = 0;
-            currentWaveNum++;
+            if (doOnce)
+            {
+                timeBetweenWavesTimer = timeBetweenWaves;
+                doOnce = false;
+            }
+            timeBetweenWavesTimer -= Time.deltaTime;
+            canSpawn = false;
+            waveInfoText.text = "Waiting for next wave : " + Mathf.Round(timeBetweenWavesTimer);
+            if (timeBetweenWavesTimer <= 0)
+            {
+                doOnce = true;
+                canSpawn = true;
+                currentWaveNum++;
+                totalEnemiesCurrentWave = amountOfEnemysForWave[currentWaveNum];
+                currentAmountOfEnemiesSpawned = 0;
+                amountOfEnemiesKilled = 0;
+            }
+
             if (currentWaveNum >= amountOfWaves)
             {
                 print("Game won!");

@@ -34,21 +34,19 @@ public class Teleport : MonoBehaviour
     
         if (Input.GetKey(KeyCode.E) && interactable.enabled == true)
         {
-            Squirrel.transform.position = targetTP.transform.position;
+            Squirrel.transform.localPosition = targetTP.transform.localPosition;
             if (VCamActieve == true)
             {
                 VCam1.SetActive(false);
                 VCam2.SetActive(true);
                 VCamActieve = false;
             }
-            else
-            {
-                VCam1.SetActive(true);
-                VCam2.SetActive(false);
-                VCamActieve=true;
-            }
-            
-
+            //else
+            //{
+            //    VCam1.SetActive(true);
+            //    VCam2.SetActive(false);
+            //    VCamActieve = true;
+            //}
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

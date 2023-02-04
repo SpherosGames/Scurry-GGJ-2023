@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class Interact : MonoBehaviour
 {
-    public Image interactable; // Dit is de "E" van de squirrel
-    public TMP_Text signDialog; // dialog van een sign 
-    public Image backGroundDialog;
-    public string dialogueText;
+    [SerializeField] Image interactable; // Dit is de "E" van de squirrel
+    [SerializeField] TMP_Text signDialog; // dialog van een sign 
+    [SerializeField] Image backGroundDialog;
+    [SerializeField] string dialogueText;
 
     public void Start()
     {
@@ -44,4 +44,3 @@ public class Interact : MonoBehaviour
         backGroundDialog.enabled = false;
     }
 }
-    
