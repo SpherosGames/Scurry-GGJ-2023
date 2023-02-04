@@ -11,6 +11,8 @@ public class Turret : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private Building building;
     [SerializeField] private Nuts nut;
+
+    private ParticleSystem shellEjectPS;
     
     private bool shootingTimerOn;
     private float shootingTimer;
@@ -19,14 +21,20 @@ public class Turret : MonoBehaviour
     {
         building = GameObject.Find("Building").GetComponent<Building>();
         nut = GameObject.Find("/Nuts").GetComponent<Nuts>();
+        shellEjectPS = transform.parent.GetComponentInChildren<ParticleSystem>();
 
         shootingTimer = shootingTimerDefault;
     }
 
     private void Update()
     {
+        print(shellEjectPS.emissionRate);
+        print(shellEjectPS.isPlaying);
         if (shootingTimerOn)
         {
+            print("Shooting...");
+            shellEjectPS.Play();
+
             shootingTimer -= Time.deltaTime;
 
             if (shootingTimer <= 0)
@@ -34,6 +42,11 @@ public class Turret : MonoBehaviour
                 Shoot();
                 shootingTimer = shootingTimerDefault;
             }
+        }
+        else
+        {
+            print("Not shooting so much no more anymore");
+            shellEjectPS.Stop();
         }
 
         if (health <= 0)

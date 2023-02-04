@@ -23,7 +23,7 @@ public class EnemyMove : MonoBehaviour
 
     private void Start()
     {
-        nuts = GameObject.Find("Nuts").GetComponent<Nuts>();
+        nuts = GameObject.Find("/Nuts").GetComponent<Nuts>();
 
         animator = GetComponent<Animator>();
 
@@ -63,7 +63,7 @@ public class EnemyMove : MonoBehaviour
 
                         if (objectToDamage.CompareTag("Turret"))
                         {
-                            objectToDamage.GetComponent<Turret>().RemoveHealth(damage);
+                            objectToDamage.transform.Find("Collider").GetComponent<Turret>().RemoveHealth(damage);
                         }
 
                         if (objectToDamage.CompareTag("Tree"))
@@ -93,15 +93,6 @@ public class EnemyMove : MonoBehaviour
             canAttack = true;
             objectToDamage = collision.gameObject;
         }
-
-        //if (collision.gameObject.CompareTag("Enemy"))
-        //{
-        //    print("Enemy in front of me!");
-        //    collision.gameObject.GetComponent<EnemyMove>().canMove = false;
-        //    canMove = false;
-        //    canAttack = false;
-        //    objectToDamage = null;
-        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -112,13 +103,6 @@ public class EnemyMove : MonoBehaviour
             canAttack = false;
             objectToDamage = null;
         }
-
-        //if (collision.CompareTag("Enemy"))
-        //{
-        //    canMove = true;
-        //    canAttack = false;
-        //    objectToDamage = null;
-        //}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

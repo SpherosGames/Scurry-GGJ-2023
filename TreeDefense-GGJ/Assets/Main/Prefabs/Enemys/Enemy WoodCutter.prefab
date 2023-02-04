@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1708802941}
   - component: {fileID: 1708802942}
   - component: {fileID: 1708802943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy WoodCutter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
