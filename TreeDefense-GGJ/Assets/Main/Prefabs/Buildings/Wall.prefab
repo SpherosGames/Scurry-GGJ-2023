@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5160528597655296620}
   - component: {fileID: 2880227777665876965}
   - component: {fileID: 8129047577181190271}
+  - component: {fileID: -2092819512936594183}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Wall
@@ -137,5 +138,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87aacbd572d1344c813c07bbe60c31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  removeButton: {fileID: 0}
-  buttons: []
+  removeButtons: []
+--- !u!114 &-2092819512936594183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160528597655296623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466780d5349d2594684f095190a2b134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildPosition: 0

@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class ShowRemove : MonoBehaviour
 {
-    [SerializeField] private GameObject[] removeButtons;
+    [SerializeField] private List<GameObject> removeButtons;
 
     private void Awake()
     {
         print("awake!");
-        removeButtons[0] = transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton").gameObject;
-        removeButtons[1] = transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton (1)").gameObject;
-        removeButtons[2] = transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton (2)").gameObject;
+        print(transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton").gameObject.name);
+        removeButtons.Add(transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton").gameObject);
+        removeButtons.Add(transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton (1)").gameObject);
+        removeButtons.Add(transform.Find("/BuildCanvas").Find("RemoveButtons").Find("RemoveButton (2)").gameObject);
     }
 
     private void OnMouseEnter()
     {
-        removeButtons[0].SetActive(true);
+        removeButtons[gameObject.GetComponent<BuildPositionIndex>().GetBuildPosition()].SetActive(true);
     }
 
     private void OnMouseExit()
     {
-        removeButtons[0].SetActive(false);
+        removeButtons[gameObject.GetComponent<BuildPositionIndex>().GetBuildPosition()].SetActive(false);
     }
 }
