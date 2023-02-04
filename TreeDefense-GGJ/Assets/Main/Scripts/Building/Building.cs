@@ -8,9 +8,11 @@ public class Building : MonoBehaviour
     [SerializeField] private GameObject chooseBuildingPanel;
     [SerializeField] private Transform buildingParent;
     [SerializeField] private Transform buildCanvas;
-    [SerializeField] private GameObject SelectPanel;
+    [SerializeField] private GameObject spawnedBuilding;
     [SerializeField] private GameObject[] buttons;
     [SerializeField] private TMP_Text warningText;
+
+    private GameObject[] spawnedBuildings = new GameObject[3];
 
     private bool canBuild;
     private bool isChoosingBuilding;
@@ -20,7 +22,7 @@ public class Building : MonoBehaviour
     private GameObject buildingToSpawn;
 
     int buildPositionIndexNum;
-    int removePositionIndexNum;
+    //int removePositionIndexNum;
 
     public void Build(GameObject building)
     {
@@ -72,10 +74,9 @@ public class Building : MonoBehaviour
         }
         else
         {
-            removePositionIndexNum = removeIndex;
-            if (SelectPanel)
+            if (spawnedBuilding)
             {
-                Destroy(SelectPanel);
+                Destroy(spawnedBuildings[removeIndex]);
                 buttons[removeIndex].SetActive(true);
             }
             else
@@ -92,7 +93,8 @@ public class Building : MonoBehaviour
         if (canBuild)
         {
             chooseBuildPanelActive = false;
-            SelectPanel = Instantiate(buildingToSpawn, buildPosition.transform.position, Quaternion.identity, buildingParent);
+            spawnedBuilding = Instantiate(buildingToSpawn, buildPosition.transform.position, Quaternion.identity, buildingParent);
+            spawnedBuildings[buildPositionIndexNum] = spawnedBuilding;
             canBuild = false;
         }
     }
