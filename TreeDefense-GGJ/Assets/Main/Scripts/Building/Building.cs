@@ -98,7 +98,6 @@ public class Building : MonoBehaviour
             {
                 if (spawnedBuilding.name == "Wall(Clone)")
                 {
-                    // spawnedBuilding.GetComponent<Wall>().GetHealth();
                     nuts.RemoveNuts(-returnCosts[0]);
                 }
                 else if (spawnedBuilding.name == "Turret(Clone)")
@@ -138,6 +137,14 @@ public class Building : MonoBehaviour
             spawnedBuilding = Instantiate(buildingToSpawn, buildPosition.transform.position, Quaternion.identity, buildingParent);
             spawnedBuildings[buildPositionIndexNum] = spawnedBuilding;
             canBuild = false;
+        }
+
+        if (chooseBuildPanelActive && Input.GetKeyDown(KeyCode.Backspace))
+        {
+            chooseBuildPanelActive = false;
+            chooseBuildingPanel.SetActive(false);
+            buttons[buildPositionIndexNum].SetActive(true);
+            isChoosingBuilding = false;
         }
     }
 
