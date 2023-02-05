@@ -12,17 +12,14 @@ public class ReturnFromBuild : MonoBehaviour
     [SerializeField] GameObject squirel;
     SpriteRenderer[] enemySprites;
     [SerializeField] BuildInteract build;
-    [SerializeField] BuildInteract windowBuild;
 
     private bool canUse;
-    private bool canUse2;
     private bool doOnce = true;
-    private bool doOnce2 = true;
 
     private void Update()
     {
-        print("CanUse : " + canUse2);
-        print("Do Once : " + doOnce2);
+        print("CanUse : " + canUse);
+        print("Do Once : " + doOnce);
 
         if (build.IsOutside())
         {
@@ -30,15 +27,6 @@ public class ReturnFromBuild : MonoBehaviour
             {
                 doOnce = false;
                 Invoke("CanUseTrue", 1f);
-            }
-        }
-
-        if (windowBuild.IsOutside())
-        {
-            if (doOnce2)
-            {
-                doOnce2 = false;
-                Invoke("CanUseTrue2", 1f);
             }
         }
 
@@ -52,32 +40,6 @@ public class ReturnFromBuild : MonoBehaviour
             outsideCam.SetActive(false);
             eToReturn.SetActive(false);
             squirel.SetActive(true);
-
-            enemySprites = enemies.GetComponentsInChildren<SpriteRenderer>();
-
-            foreach (var enemy in enemySprites)
-            {
-                enemy.enabled = true;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) && windowBuild.IsOutside() && canUse2)
-        {
-            doOnce2 = true;
-            canUse2 = false;
-            print("return from outside");
-            build.SetIsOutside(false);
-            cam2.SetActive(true);
-            outsideCam.SetActive(false);
-            eToReturn.SetActive(false);
-            squirel.SetActive(true);
-
-            enemySprites = enemies.GetComponentsInChildren<SpriteRenderer>();
-
-            foreach (var enemy in enemySprites)
-            {
-                enemy.enabled = true;
-            }
         }
     }
 
@@ -85,11 +47,5 @@ public class ReturnFromBuild : MonoBehaviour
     {
         canUse = true;
         doOnce = true;
-    }
-
-    private void CanUseTrue2()
-    {
-        canUse2 = true;
-        doOnce2 = true;
     }
 }
