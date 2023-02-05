@@ -64,7 +64,6 @@ public class BirdInteraction : MonoBehaviour
 
     public void Receive()
     {
-        print("Receigbwoihge 1");
         nutsToReceive += waves.ReceiveNuts();
         nuts.RemoveNuts(-nutsToReceive);
         nutsToReceive = 0;
@@ -73,14 +72,20 @@ public class BirdInteraction : MonoBehaviour
 
     public void AddNuts()
     {
-        nutsToSend += 100;
-        bribeText.text = "Confirm : " + nutsToSend;
+        if (nutsToSend < nuts.GetAmountOfNuts() - 100)
+        {
+            nutsToSend += 100;
+            bribeText.text = "Confirm : " + nutsToSend;
+        }
     }
 
     public void RemoveNuts()
     {
-        nutsToSend -= 100;
-        bribeText.text = "Confirm : " + nutsToSend;
+        if (nutsToSend >= 100)
+        {
+            nutsToSend -= 100;
+            bribeText.text = "Confirm : " + nutsToSend;
+        }
     }
 
     public void ConfirmBribe()

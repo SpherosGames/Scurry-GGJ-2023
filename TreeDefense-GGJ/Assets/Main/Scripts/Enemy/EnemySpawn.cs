@@ -114,7 +114,6 @@ public class EnemySpawn : MonoBehaviour
 
     public int ReceiveNuts()
     {
-        print(nutsPerWave);
         return nutsPerWave;
     }
 
