@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour
@@ -5,6 +7,8 @@ public class BulletScript : MonoBehaviour
     float bulletTtl = 5;
     [SerializeField] GameObject bullet;
     [SerializeField] int damage = 1;
+    [SerializeField] List<GameObject> enemyColliders;
+    [SerializeField] GameObject[] gameObjects;
 
     void Update()
     {
@@ -19,8 +23,12 @@ public class BulletScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            //enemyColliders.Add(collision.gameObject.GetComponent<GameObject>());
+            
             collision.gameObject.GetComponent<EnemyHealth>().RemoveHealth(damage);
         }
+       
         Destroy(bullet);
+        return;
     }
 }
