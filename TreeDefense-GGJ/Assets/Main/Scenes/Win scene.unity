@@ -299,8 +299,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -535.8, y: 306}
-  m_SizeDelta: {x: 911.6013, y: 435.8934}
+  m_AnchoredPosition: {x: -263.28027, y: 228.86365}
+  m_SizeDelta: {x: 971.0787, y: 330.0049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &209616916
 MonoBehaviour:
@@ -434,8 +434,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2560, y: 1440}
+  m_AnchoredPosition: {x: -4.2952, y: -2.802}
+  m_SizeDelta: {x: 1922.127, y: 1090.1912}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &634894812
 MonoBehaviour:
@@ -833,8 +833,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -783, y: -367}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -592.1957, y: -280.64935}
+  m_SizeDelta: {x: 120.133, y: 22.7122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791331949
 MonoBehaviour:
@@ -965,8 +965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -492, y: 0.000026703}
-  m_SizeDelta: {x: 1052, y: 541.4031}
+  m_AnchoredPosition: {x: -373.70404, y: -2.802}
+  m_SizeDelta: {x: 789.8738, y: 409.8841}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1839736831
 MonoBehaviour:
@@ -1016,8 +1016,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75
-  m_fontSizeBase: 75
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1115,10 +1115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
