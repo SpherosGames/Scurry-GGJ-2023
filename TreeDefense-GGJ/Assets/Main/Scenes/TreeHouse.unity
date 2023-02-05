@@ -160,7 +160,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 2.64}
-  m_SizeDelta: {x: 15.1577, y: 5.4541}
+  m_SizeDelta: {x: 15.1577, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &58968724
 MonoBehaviour:
@@ -801,7 +801,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 419956176}
         m_TargetAssemblyTypeName: BirdInteraction, Assembly-CSharp
-        m_MethodName: Bribe
+        m_MethodName: ConfirmBribe
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -810,6 +810,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1043230426}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2138374691}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!222 &171708764
 CanvasRenderer:
@@ -1440,7 +1464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Confirm: 50'
+  m_text: 'Confirm: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1770,6 +1794,7 @@ MonoBehaviour:
   timeBetweenWaves: 10
   amountOfEnemysForWave: 03000000090000000f000000170000001e000000
   waveInfoText: {fileID: 1400997622}
+  bird: {fileID: 419956176}
 --- !u!4 &327317046
 Transform:
   m_ObjectHideFlags: 0
@@ -2002,6 +2027,8 @@ MonoBehaviour:
   waves: {fileID: 327317045}
   interactable: {fileID: 3954919662114901199}
   birdInteractionScreen: {fileID: 2141649703}
+  bribeText: {fileID: 294998215}
+  bribeButton: {fileID: 1118083437}
 --- !u!1 &420300696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,7 +2354,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 419956176}
         m_TargetAssemblyTypeName: BirdInteraction, Assembly-CSharp
-        m_MethodName: Bribe
+        m_MethodName: AddNuts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5150,7 +5177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1043230427
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5786,10 +5813,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 419956176}
-        m_TargetAssemblyTypeName: BirdInteraction, Assembly-CSharp
-        m_MethodName: Bribe
-        m_Mode: 1
+      - m_Target: {fileID: 1043230426}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2138374691}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5912,8 +5951,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 13.8863, y: 4.5046}
+  m_AnchoredPosition: {x: 0.0481, y: 0.1203}
+  m_SizeDelta: {x: 13.9826, y: 5.5156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1178500643
 MonoBehaviour:
@@ -5936,7 +5975,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Hello! Here you can bribe the bird! Select amount of nuts, and you get
-    them back x2 after X waves.
+    them back x2 after the next wave.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10731,7 +10770,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 419956176}
         m_TargetAssemblyTypeName: BirdInteraction, Assembly-CSharp
-        m_MethodName: Receive
+        m_MethodName: RemoveNuts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11248,7 +11287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2138374692
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11694,7 +11733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8866823463216633341
 GameObject:
   m_ObjectHideFlags: 0

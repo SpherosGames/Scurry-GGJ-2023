@@ -28,11 +28,11 @@ public class Turret : MonoBehaviour
 
     private void Update()
     {
-        print(shellEjectPS.emissionRate);
-        print(shellEjectPS.isPlaying);
+        //print(shellEjectPS.emissionRate);
+        //print(shellEjectPS.isPlaying);
         if (shootingTimerOn)
         {
-            print("Shooting...");
+            //print("Shooting...");
             shellEjectPS.Play();
 
             shootingTimer -= Time.deltaTime;
@@ -45,7 +45,7 @@ public class Turret : MonoBehaviour
         }
         else
         {
-            print("Not shooting so much no more anymore");
+            //print("Not shooting so much no more anymore");
             shellEjectPS.Stop();
         }
 
