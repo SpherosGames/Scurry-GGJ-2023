@@ -114,4 +114,14 @@ public class EnemySpawn : MonoBehaviour
     {
         nutsPerWave = 0;
     }
+
+    public void StartGame()
+    {
+        startGame = true;
+    }
+
+    public bool GetStartGame()
+    {
+        return startGame;
+    }
 }

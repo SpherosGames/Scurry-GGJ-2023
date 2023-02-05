@@ -15,6 +15,8 @@ public class BirdInteraction : MonoBehaviour
     [SerializeField] private TMP_Text bribeText;
     [SerializeField] private GameObject bribeButton;
 
+    [SerializeField] private int startingNuts;
+
     private int nutsToReceive;
     private int nutsToSend;
 
@@ -24,6 +26,7 @@ public class BirdInteraction : MonoBehaviour
     {
         interactable.enabled = false;
         birdInteractionScreen.SetActive(false);
+        nutsToReceive = startingNuts;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

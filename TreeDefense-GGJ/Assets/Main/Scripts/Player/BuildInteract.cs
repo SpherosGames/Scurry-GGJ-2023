@@ -11,6 +11,8 @@ public class BuildInteract : MonoBehaviour
     [SerializeField] GameObject enemies;
     [SerializeField] GameObject eToReturn;
     [SerializeField] GameObject squirel;
+    [SerializeField] Nuts nuts;
+    [SerializeField] EnemySpawn enemySpawn;
 
     private bool isOutside;
 
@@ -34,6 +36,10 @@ public class BuildInteract : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && interactable.enabled && isOutside == false && canUse)
         {
+            if (nuts.GetAmountOfNuts() > 0)
+            {
+                enemySpawn.StartGame();
+            }
             canUse = false;
             isOutside = true;
             cam2.SetActive(false);

@@ -7,15 +7,19 @@ public class Nuts : MonoBehaviour
 {
     [SerializeField] private int nutCount;
     [SerializeField] private TMP_Text nutCountText;
+    [SerializeField] private EnemySpawn enemySpawn;
 
     private void Update()
     {
         nutCountText.text = " : " + nutCount.ToString();
 
-        if (nutCount <= 0)
+        if (enemySpawn.GetStartGame())
         {
-            print("The Tree DIED!");
-            Time.timeScale = 0;
+            if (nutCount <= 0)
+            {
+                print("The Tree DIED!");
+                Time.timeScale = 0;
+            }
         }
     }
 
@@ -27,5 +31,10 @@ public class Nuts : MonoBehaviour
     public void RemoveNuts(int amount)
     {
         nutCount -= amount;
+    }
+
+    public int GetAmountOfNuts()
+    {
+        return nutCount;
     }
 }
