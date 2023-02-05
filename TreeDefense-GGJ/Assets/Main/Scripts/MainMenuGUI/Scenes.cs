@@ -15,7 +15,7 @@ public class Scenes : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene("Enemy Test", LoadSceneMode.Single);
+        SceneManager.LoadScene("TreeHouse", LoadSceneMode.Single);
     }
     public void Options()
     {
