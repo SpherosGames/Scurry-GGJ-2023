@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Scenes/TreeHouse.unity
     guid: 9c79b6c13b933b04695fe3eedbd178b0
+  - enabled: 1
+    path: Assets/Main/Scenes/Win scene.unity
+    guid: 5945f8d9ccc4a754d8ba6ec1154cc506
+  - enabled: 1
+    path: Assets/Main/Scenes/Lose scene.unity
+    guid: f620c430d28aae149adfac79b93de849
   m_configObjects: {}

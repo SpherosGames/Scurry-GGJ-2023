@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawn : MonoBehaviour
 {
@@ -72,7 +73,7 @@ public class EnemySpawn : MonoBehaviour
 
         if (currentWaveNum == amountOfWaves - 1)
         {
-            print("Win");
+            SceneManager.LoadScene("Win scene");
         }
 
         if (currentAmountOfEnemiesSpawned == totalEnemiesCurrentWave && amountOfEnemiesKilled == totalEnemiesCurrentWave)
