@@ -313,7 +313,7 @@ Canvas:
   m_OverrideSorting: 1
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
@@ -2459,7 +2459,10 @@ MonoBehaviour:
   - {fileID: 1214389241}
   - {fileID: 1557497878}
   - {fileID: 811465826}
-  warningText: {fileID: 0}
+  warningText: {fileID: 1426453946}
+  nuts: {fileID: 0}
+  costs: 32000000640000002c010000
+  returnCosts: 14000000320000000a000000
 --- !u!4 &724027418
 Transform:
   m_ObjectHideFlags: 0

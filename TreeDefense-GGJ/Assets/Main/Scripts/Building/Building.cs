@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,6 +12,9 @@ public class Building : MonoBehaviour
     [SerializeField] private GameObject spawnedBuilding;
     [SerializeField] private GameObject[] buttons;
     [SerializeField] private TMP_Text warningText;
+    [SerializeField] private Nuts nuts;
+    [SerializeField] private int[] costs;
+    [SerializeField] private int[] returnCosts;
 
     private GameObject[] spawnedBuildings = new GameObject[4];
 
@@ -37,6 +41,23 @@ public class Building : MonoBehaviour
             warningText.text = "Can't Build Here";
             warningText.gameObject.SetActive(true);
             Invoke("RemoveWarning", 1f);
+        }
+
+        if (building.name == "Wall")
+        {
+            nuts.RemoveNuts(costs[0]);
+        }
+        else if (building.name == "Turret")
+        {
+            nuts.RemoveNuts(costs[1]);
+        }
+        else if (building.name == "Mine")
+        {
+            nuts.RemoveNuts(costs[2]);
+        }
+        else
+        {
+            Debug.LogWarning("Can't find placed building, no nuts removed from nuts pool");
         }
     }
 
@@ -77,6 +98,22 @@ public class Building : MonoBehaviour
             {
                 Destroy(spawnedBuildings[removeIndex]);
                 buttons[removeIndex].SetActive(true);
+                if (spawnedBuilding.name == "Wall")
+                {
+                    nuts.RemoveNuts(returnCosts[0]);
+                }
+                else if (spawnedBuilding.name == "Turret")
+                {
+                    nuts.RemoveNuts(returnCosts[1]);
+                }
+                else if (spawnedBuilding.name == "Mine")
+                {
+                    nuts.RemoveNuts(returnCosts[2]);
+                }
+                else
+                {
+                    Debug.LogWarning("Can't find placed building, no nuts removed from nuts pool");
+                }
             }
             else
             {
