@@ -5003,7 +5003,7 @@ MonoBehaviour:
   mineCDText: {fileID: 2718316770621177409}
   Explosion: {fileID: 2718316770159215087}
   ps: {fileID: 2108139115}
-  range: 0.3
+  range: 0.7
   building: {fileID: 0}
 --- !u!114 &-8442118320808645796
 MonoBehaviour:

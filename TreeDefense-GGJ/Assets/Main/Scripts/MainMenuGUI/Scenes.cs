@@ -13,10 +13,12 @@ public class Scenes : MonoBehaviour
         OptionsMenu.enabled = false;
         MainMenu.enabled = true;
     }
+
     public void Play()
     {
         SceneManager.LoadScene("TreeHouse", LoadSceneMode.Single);
     }
+
     public void Options()
     {
         OptionsMenu.enabled = true;
@@ -28,10 +30,12 @@ public class Scenes : MonoBehaviour
         MainMenu.enabled = true;
         OptionsMenu.enabled = false;
     }
+
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
+
     public void Quit()
     {
         print("Quit game");
