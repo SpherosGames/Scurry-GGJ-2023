@@ -169,6 +169,7 @@ public class Building : MonoBehaviour
     {
         Destroy(spawnedBuildings[removeIndex]);
         buttons[removeIndex].SetActive(true);
+        return;
     }
 
     private void Update()

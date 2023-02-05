@@ -51,7 +51,8 @@ public class Turret : MonoBehaviour
 
         if (health <= 0)
         {
-            building.DestroyBuilding(GetComponent<BuildPositionIndex>().GetBuildPosition());
+            print(building.name);
+            building.DestroyBuilding(transform.parent.GetComponent<BuildPositionIndex>().GetBuildPosition());
         }
     }
 
