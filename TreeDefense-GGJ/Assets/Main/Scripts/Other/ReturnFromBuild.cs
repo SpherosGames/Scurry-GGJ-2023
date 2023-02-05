@@ -18,8 +18,8 @@ public class ReturnFromBuild : MonoBehaviour
 
     private void Update()
     {
-        print("CanUse : " + canUse);
-        print("Do Once : " + doOnce);
+        //print("CanUse : " + canUse);
+        //print("Do Once : " + doOnce);
 
         if (build.IsOutside())
         {

@@ -13,6 +13,7 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private float timeBetweenWaves;
     [SerializeField] private int[] amountOfEnemysForWave;
     [SerializeField] private TMP_Text waveInfoText;
+    [SerializeField] private BirdInteraction bird;
 
     private int amountOfEnemiesKilled;
     private int currentAmountOfEnemiesSpawned;
@@ -31,6 +32,8 @@ public class EnemySpawn : MonoBehaviour
 
     private int nutsPerWave;
 
+    private bool startGame;
+
     private void Start()
     {
         spawnTimer = spawnTimerDefault[currentWaveNum];
@@ -40,20 +43,23 @@ public class EnemySpawn : MonoBehaviour
 
     private void Update()
     {
-        if (canSpawn)
+        if (startGame)
         {
-            waveInfoText.text = "Spawning Enemies...";
-
-            if (spawnTimerOn && amountOfEnemysForWave[currentWaveNum] > 0)
+            if (canSpawn)
             {
-                spawnTimer -= Time.deltaTime;
+                waveInfoText.text = "Spawning Enemies...";
 
-                if (spawnTimer <= 0)
+                if (spawnTimerOn && amountOfEnemysForWave[currentWaveNum] > 0)
                 {
-                    spawnTimer = spawnTimerDefault[currentWaveNum];
-                    Instantiate(enemyPrefab, spawnTransform.position, Quaternion.identity, enemyParent);
-                    amountOfEnemysForWave[currentWaveNum]--;
-                    currentAmountOfEnemiesSpawned++;
+                    spawnTimer -= Time.deltaTime;
+
+                    if (spawnTimer <= 0)
+                    {
+                        spawnTimer = spawnTimerDefault[currentWaveNum];
+                        Instantiate(enemyPrefab, spawnTransform.position, Quaternion.identity, enemyParent);
+                        amountOfEnemysForWave[currentWaveNum]--;
+                        currentAmountOfEnemiesSpawned++;
+                    }
                 }
             }
         }
@@ -70,6 +76,8 @@ public class EnemySpawn : MonoBehaviour
             {
                 nutsPerWave += 10;
                 timeBetweenWavesTimer = timeBetweenWaves;
+                bird.CanBribeOn();
+                bird.ReceiveBribe();
                 doOnce = false;
             }
             timeBetweenWavesTimer -= Time.deltaTime;

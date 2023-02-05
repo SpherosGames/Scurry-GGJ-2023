@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,13 @@ public class BirdInteraction : MonoBehaviour
     [SerializeField] Image interactable;
     [SerializeField] private GameObject birdInteractionScreen;
 
+    [SerializeField] private TMP_Text bribeText;
+    [SerializeField] private GameObject bribeButton;
+
     private int nutsToReceive;
+    private int nutsToSend;
+
+    private bool canBribe = true;
 
     public void Start()
     {
@@ -40,6 +47,18 @@ public class BirdInteraction : MonoBehaviour
         birdInteractionScreen.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (canBribe)
+        {
+            bribeButton.SetActive(true);
+        }
+        else
+        {
+            bribeButton.SetActive(false);
+        }
+    }
+
     public void Receive()
     {
         nutsToReceive += waves.ReceiveNuts();
@@ -50,6 +69,30 @@ public class BirdInteraction : MonoBehaviour
 
     public void AddNuts()
     {
+        nutsToSend += 100;
+        bribeText.text = "Confirm : " + nutsToSend;
+    }
 
+    public void RemoveNuts()
+    {
+        nutsToSend -= 100;
+        bribeText.text = "Confirm : " + nutsToSend;
+    }
+
+    public void ConfirmBribe()
+    {
+        nuts.RemoveNuts(nutsToSend);
+        canBribe = false;
+    }
+
+    public void CanBribeOn()
+    {
+        canBribe = true;
+    }
+
+    public void ReceiveBribe()
+    {
+        nutsToReceive += nutsToSend * 2;
+        print(nutsToReceive);
     }
 }
