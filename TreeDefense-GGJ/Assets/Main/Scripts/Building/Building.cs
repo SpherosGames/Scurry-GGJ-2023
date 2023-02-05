@@ -98,6 +98,7 @@ public class Building : MonoBehaviour
             {
                 if (spawnedBuilding.name == "Wall(Clone)")
                 {
+                    // spawnedBuilding.GetComponent<Wall>().GetHealth();
                     nuts.RemoveNuts(-returnCosts[0]);
                 }
                 else if (spawnedBuilding.name == "Turret(Clone)")
