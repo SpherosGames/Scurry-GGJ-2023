@@ -29,7 +29,7 @@ public class EnemySpawn : MonoBehaviour
 
     private float timeBetweenWavesTimer;
 
-    private int nutsPerWave = 10;
+    private int nutsPerWave;
 
     private void Start()
     {
