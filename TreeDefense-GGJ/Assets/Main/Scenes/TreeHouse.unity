@@ -4957,7 +4957,7 @@ GameObject:
   m_Component:
   - component: {fileID: 976078206}
   - component: {fileID: 976078205}
-  - component: {fileID: 976078204}
+  - component: {fileID: 976078207}
   m_Layer: 0
   m_Name: Pops
   m_TagString: Untagged
@@ -4965,22 +4965,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &976078204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 976078203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc7f1656632771a468b74753094402f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: {fileID: 3954919662114901199}
-  signDialog: {fileID: 1836631185}
-  backGroundDialog: {fileID: 1399748075}
-  dialogueText: '"Pops taught me how to walk! A to go left, and D to go right."'
 --- !u!61 &976078205
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5022,6 +5006,23 @@ Transform:
   m_Father: {fileID: 1751819971}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &976078207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976078203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f1656632771a468b74753094402f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 3954919662114901199}
+  signDialog: {fileID: 1836631185}
+  backGroundDialog: {fileID: 1399748075}
+  dialogueText: '"Pops taught me how to walk and sprint! A to go left, D to go right
+    and Shift to sprint!"'
 --- !u!1 &987385177
 GameObject:
   m_ObjectHideFlags: 0
@@ -8364,7 +8365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1586486557}
   - component: {fileID: 1586486556}
-  - component: {fileID: 1586486555}
+  - component: {fileID: 1586486558}
   m_Layer: 0
   m_Name: Grandma
   m_TagString: Untagged
@@ -8372,23 +8373,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1586486555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586486554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc7f1656632771a468b74753094402f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: {fileID: 3954919662114901199}
-  signDialog: {fileID: 1836631185}
-  backGroundDialog: {fileID: 1399748075}
-  dialogueText: '"Grandma told me about the war between us and the humans, They have
-    been wanting to cut down this trees for years!"'
 --- !u!61 &1586486556
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8430,6 +8414,23 @@ Transform:
   m_Father: {fileID: 1751819971}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1586486558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586486554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f1656632771a468b74753094402f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 3954919662114901199}
+  signDialog: {fileID: 1836631185}
+  backGroundDialog: {fileID: 1399748075}
+  dialogueText: '"Grandma told me the war has been going on for years! Hopefully
+    they''ll stop trying to cut down the family tree someday.."'
 --- !u!1 &1588026928
 GameObject:
   m_ObjectHideFlags: 0
@@ -11083,7 +11084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2081587814}
   - component: {fileID: 2081587813}
-  - component: {fileID: 2081587812}
+  - component: {fileID: 2081587815}
   m_Layer: 0
   m_Name: Ma
   m_TagString: Untagged
@@ -11091,23 +11092,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2081587812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081587811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc7f1656632771a468b74753094402f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable: {fileID: 3954919662114901199}
-  signDialog: {fileID: 1836631185}
-  backGroundDialog: {fileID: 1399748075}
-  dialogueText: '"Ma can build amazing towers at the workshop upstairs! She made
-    her own blueprints"'
 --- !u!61 &2081587813
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11149,6 +11133,22 @@ Transform:
   m_Father: {fileID: 1751819971}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2081587815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081587811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f1656632771a468b74753094402f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: {fileID: 3954919662114901199}
+  signDialog: {fileID: 1836631185}
+  backGroundDialog: {fileID: 1399748075}
+  dialogueText: '"Ma is amazing at building! Maybe I could check the blueprints upstairs.."'
 --- !u!1 &2109169309
 GameObject:
   m_ObjectHideFlags: 0

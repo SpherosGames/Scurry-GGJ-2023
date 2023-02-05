@@ -13,6 +13,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private Nuts nut;
 
     private ParticleSystem shellEjectPS;
+    private ParticleSystem shootSparks;
     
     private bool shootingTimerOn;
     private float shootingTimer;
@@ -22,7 +23,7 @@ public class Turret : MonoBehaviour
         building = GameObject.Find("Building").GetComponent<Building>();
         nut = GameObject.Find("/Nuts").GetComponent<Nuts>();
         shellEjectPS = transform.parent.GetComponentInChildren<ParticleSystem>();
-
+        shootSparks = transform.parent.GetComponentInChildren<ParticleSystem>();
         shootingTimer = shootingTimerDefault;
     }
 
@@ -34,6 +35,7 @@ public class Turret : MonoBehaviour
         {
             //print("Shooting...");
             shellEjectPS.Play();
+            shootSparks.Play();
 
             shootingTimer -= Time.deltaTime;
 
