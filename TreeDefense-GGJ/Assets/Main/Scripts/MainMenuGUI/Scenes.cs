@@ -27,8 +27,13 @@ public class Scenes : MonoBehaviour
     {
         MainMenu.enabled = true;
         OptionsMenu.enabled = false;
-    }    
+    }
 
+    public void Quit()
+    {
+        print("Quit game");
+        Application.Quit();
+    }
 }
 
 
