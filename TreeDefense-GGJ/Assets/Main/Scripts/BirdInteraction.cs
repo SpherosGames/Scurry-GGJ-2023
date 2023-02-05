@@ -48,7 +48,7 @@ public class BirdInteraction : MonoBehaviour
         waves.DeleteDeezNuts();
     }
 
-    public void Bribe()
+    public void AddNuts()
     {
 
     }
