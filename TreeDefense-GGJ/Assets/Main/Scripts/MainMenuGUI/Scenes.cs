@@ -28,7 +28,10 @@ public class Scenes : MonoBehaviour
         MainMenu.enabled = true;
         OptionsMenu.enabled = false;
     }
-
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+    }
     public void Quit()
     {
         print("Quit game");
