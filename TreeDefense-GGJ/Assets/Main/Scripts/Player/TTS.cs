@@ -2,14 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 public class TTS : MonoBehaviour
 {
     public TMP_Text Dialogue;
     public string[] lines;
     public float textSpeed;
     private int index;
+    [SerializeField] Image interactable; // Dit is de "E" van de squirrel
+    [SerializeField] TMP_Text signDialog; // dialog van een sign 
+    [SerializeField] Image backGroundDialog;
+    [SerializeField] string dialogueText;
     void Start()
     {
+        interactable.enabled = false;
+        signDialog.enabled = false;
+        backGroundDialog.enabled = false;
         Dialogue.text = string.Empty;
         StartDialogue();
     }
@@ -17,7 +25,7 @@ public class TTS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (Input.GetMouseButton(0))
+      if (Input.GetKeyDown(KeyCode.Space))
         {
             if (Dialogue.text == lines[index])
             {
