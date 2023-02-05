@@ -11,7 +11,6 @@ public class BuildInteract : MonoBehaviour
     [SerializeField] GameObject enemies;
     [SerializeField] GameObject eToReturn;
     [SerializeField] GameObject squirel;
-    SpriteRenderer[] enemySprites;
 
     private bool isOutside;
 
@@ -41,13 +40,6 @@ public class BuildInteract : MonoBehaviour
             outsideCam.SetActive(true);
             eToReturn.SetActive(true);
             squirel.SetActive(false);
-
-            enemySprites = enemies.GetComponentsInChildren<SpriteRenderer>();
-
-            foreach (var enemy in enemySprites)
-            {
-                enemy.enabled = false;
-            }
         }
     }
 

@@ -27,7 +27,6 @@ public class EnemySpawn : MonoBehaviour
 
     private bool doOnce = true;
 
-    //private bool timeBetweenWavesTimerOn;
     private float timeBetweenWavesTimer;
 
     private void Start()

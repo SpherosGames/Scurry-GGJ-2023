@@ -96,24 +96,25 @@ public class Building : MonoBehaviour
         {
             if (spawnedBuilding)
             {
-                Destroy(spawnedBuildings[removeIndex]);
-                buttons[removeIndex].SetActive(true);
-                if (spawnedBuilding.name == "Wall")
+                if (spawnedBuilding.name == "Wall(Clone)")
                 {
-                    nuts.RemoveNuts(returnCosts[0]);
+                    nuts.RemoveNuts(-returnCosts[0]);
                 }
-                else if (spawnedBuilding.name == "Turret")
+                else if (spawnedBuilding.name == "Turret(Clone)")
                 {
-                    nuts.RemoveNuts(returnCosts[1]);
+                    nuts.RemoveNuts(-returnCosts[1]);
                 }
-                else if (spawnedBuilding.name == "Mine")
+                else if (spawnedBuilding.name == "Mine(Clone)")
                 {
-                    nuts.RemoveNuts(returnCosts[2]);
+                    nuts.RemoveNuts(-returnCosts[2]);
                 }
                 else
                 {
-                    Debug.LogWarning("Can't find placed building, no nuts removed from nuts pool");
+                    Debug.LogWarning("Can't find destroyed building, no nuts removed from nuts pool");
                 }
+
+                Destroy(spawnedBuildings[removeIndex]);
+                buttons[removeIndex].SetActive(true);
             }
             else
             {
