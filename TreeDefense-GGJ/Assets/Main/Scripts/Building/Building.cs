@@ -27,37 +27,79 @@ public class Building : MonoBehaviour
 
     int buildPositionIndexNum;
 
+    private bool purchaseValid;
+
     public void Build(GameObject building)
     {
-        if (isChoosingBuilding)
-        {
-            buildingToSpawn = building;
-            building.GetComponent<BuildPositionIndex>().SetBuildPosition(buildPositionIndexNum);
-            canBuild = true;
-            isChoosingBuilding = false;
-        }
-        else
-        {
-            warningText.text = "Can't Build Here";
-            warningText.gameObject.SetActive(true);
-            Invoke("RemoveWarning", 1f);
-        }
-
         if (building.name == "Wall")
         {
-            nuts.RemoveNuts(costs[0]);
+            if (nuts.GetAmountOfNuts() > costs[0])
+            {
+                nuts.RemoveNuts(costs[0]);
+                purchaseValid = true;
+            }
+            else
+            {
+                warningText.text = "Don't have enough money. Backspace to go back.";
+                warningText.gameObject.SetActive(true);
+                Invoke("RemoveWarning", 1f);
+            }
         }
         else if (building.name == "Turret")
         {
-            nuts.RemoveNuts(costs[1]);
+            if (nuts.GetAmountOfNuts() > costs[1])
+            {
+                nuts.RemoveNuts(costs[1]);
+                purchaseValid = true;
+            }
+            else
+            {
+                warningText.text = "Don't have enough money. Backspace to go back.";
+                warningText.gameObject.SetActive(true);
+                Invoke("RemoveWarning", 1f);
+            }
         }
         else if (building.name == "Mine")
         {
-            nuts.RemoveNuts(costs[2]);
+            if (nuts.GetAmountOfNuts() > costs[2])
+            {
+                nuts.RemoveNuts(costs[2]);
+                purchaseValid = true;
+            }
+            else
+            {
+                warningText.text = "Don't have enough money. Backspace to go back.";
+                warningText.gameObject.SetActive(true);
+                Invoke("RemoveWarning", 1f);
+            }
         }
         else
         {
             Debug.LogWarning("Can't find placed building, no nuts removed from nuts pool");
+        }
+
+        if (purchaseValid)
+        {
+            if (isChoosingBuilding)
+            {
+                purchaseValid = false;
+                buildingToSpawn = building;
+                building.GetComponent<BuildPositionIndex>().SetBuildPosition(buildPositionIndexNum);
+                canBuild = true;
+                isChoosingBuilding = false;
+            }
+            else
+            {
+                warningText.text = "Can't Build Here";
+                warningText.gameObject.SetActive(true);
+                Invoke("RemoveWarning", 1f);
+            }
+        }
+        else
+        {
+            buttons[buildPositionIndexNum].gameObject.SetActive(true);
+            isChoosingBuilding = false;
+            chooseBuildPanelActive = false;
         }
     }
 
