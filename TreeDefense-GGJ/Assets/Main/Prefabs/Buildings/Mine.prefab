@@ -5003,7 +5003,7 @@ MonoBehaviour:
   mineCDText: {fileID: 2718316770621177409}
   Explosion: {fileID: 2718316770159215087}
   ps: {fileID: 2108139115}
-  range: 0.5
+  range: 0.3
   building: {fileID: 0}
 --- !u!114 &-8442118320808645796
 MonoBehaviour:
@@ -5017,7 +5017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466780d5349d2594684f095190a2b134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildPosition: 0
+  buildPosition: 3
 --- !u!95 &-3545482363316682184
 Animator:
   serializedVersion: 5

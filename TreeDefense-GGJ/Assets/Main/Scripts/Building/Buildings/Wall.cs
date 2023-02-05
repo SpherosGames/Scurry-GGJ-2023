@@ -25,4 +25,9 @@ public class Wall : MonoBehaviour
             print("Wall has been destroyed");
         }
     }
+
+    public int GetHealth()
+    {
+        return health;
+    }
 }

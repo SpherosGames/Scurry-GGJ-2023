@@ -41,14 +41,12 @@ public class BirdInteraction : MonoBehaviour
         birdInteractionScreen.SetActive(false);
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void Receive()
     {
+        nutsToReceive += waves.ReceiveNuts();
         nuts.RemoveNuts(-nutsToReceive);
+        nutsToReceive = 0;
+        waves.DeleteDeezNuts();
     }
 
     public void Bribe()

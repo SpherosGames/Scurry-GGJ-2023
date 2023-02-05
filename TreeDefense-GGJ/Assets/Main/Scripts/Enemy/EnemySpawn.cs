@@ -29,6 +29,8 @@ public class EnemySpawn : MonoBehaviour
 
     private float timeBetweenWavesTimer;
 
+    private int nutsPerWave = 10;
+
     private void Start()
     {
         spawnTimer = spawnTimerDefault[currentWaveNum];
@@ -66,6 +68,7 @@ public class EnemySpawn : MonoBehaviour
         {
             if (doOnce)
             {
+                nutsPerWave += 10;
                 timeBetweenWavesTimer = timeBetweenWaves;
                 doOnce = false;
             }
@@ -92,5 +95,15 @@ public class EnemySpawn : MonoBehaviour
     public void IncreaseEnemiesKilled()
     {
         amountOfEnemiesKilled++;
+    }
+
+    public int ReceiveNuts()
+    {
+        return nutsPerWave;
+    }
+
+    public void DeleteDeezNuts()
+    {
+        nutsPerWave = 0;
     }
 }
