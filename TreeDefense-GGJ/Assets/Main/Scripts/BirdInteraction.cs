@@ -64,6 +64,7 @@ public class BirdInteraction : MonoBehaviour
 
     public void Receive()
     {
+        print("Receigbwoihge 1");
         nutsToReceive += waves.ReceiveNuts();
         nuts.RemoveNuts(-nutsToReceive);
         nutsToReceive = 0;

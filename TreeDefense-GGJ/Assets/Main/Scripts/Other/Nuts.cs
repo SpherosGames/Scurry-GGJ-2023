@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Nuts : MonoBehaviour
 {
@@ -17,8 +18,7 @@ public class Nuts : MonoBehaviour
         {
             if (nutCount <= 0)
             {
-                print("The Tree DIED!");
-                Time.timeScale = 0;
+                SceneManager.LoadScene("Lose scene");
             }
         }
     }
