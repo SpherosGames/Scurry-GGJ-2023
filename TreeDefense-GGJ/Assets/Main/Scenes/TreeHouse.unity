@@ -1439,6 +1439,68 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &236940776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 236940777}
+  - component: {fileID: 236940778}
+  m_Layer: 0
+  m_Name: Polygon Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &236940777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236940776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 28.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 393872308}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &236940778
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236940776}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.39561176, y: 24.261929}
+      - {x: -32.679066, y: 24.362164}
+      - {x: -33.107014, y: -1.0463828}
+      - {x: 39.911522, y: -1.2837484}
+      - {x: 39.639393, y: 24.130596}
 --- !u!1 &245245345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,6 +2187,7 @@ Transform:
   m_Children:
   - {fileID: 853723536}
   - {fileID: 1709123530}
+  - {fileID: 236940777}
   m_Father: {fileID: 1588026929}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2698,7 +2761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: {fileID: 3954919662114901199}
-  cam2: {fileID: 950363315}
+  cam2: {fileID: 0}
   outsideCam: {fileID: 1166842964}
   enemies: {fileID: 1562415343}
   eToReturn: {fileID: 390619533}
@@ -2930,6 +2993,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 567081793}
+  - {fileID: 1580666781}
   m_Father: {fileID: 1588026929}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4252,8 +4316,8 @@ MonoBehaviour:
   interactable: {fileID: 3954919662114901199}
   Squirrel: {fileID: 8866823463216633341}
   targetTP: {fileID: 867683513}
-  VCam1: {fileID: 220788227}
-  VCam2: {fileID: 950363315}
+  VCam1: {fileID: 0}
+  VCam2: {fileID: 0}
 --- !u!61 &801785834
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4816,8 +4880,8 @@ MonoBehaviour:
   interactable: {fileID: 3954919662114901199}
   Squirrel: {fileID: 8866823463216633341}
   targetTP: {fileID: 801785832}
-  VCam1: {fileID: 220788227}
-  VCam2: {fileID: 950363315}
+  VCam1: {fileID: 0}
+  VCam2: {fileID: 0}
 --- !u!61 &867683515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5071,6 +5135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 950363316}
   - component: {fileID: 950363318}
+  - component: {fileID: 950363319}
   m_Layer: 0
   m_Name: Main Room Cam
   m_TagString: Untagged
@@ -5132,6 +5197,21 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 259293097}
+--- !u!114 &950363319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950363315}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoundingShape2D: {fileID: 236940778}
+  m_Damping: 0.5
+  m_MaxWindowSize: 0
 --- !u!1 &957795421
 GameObject:
   m_ObjectHideFlags: 0
@@ -8615,6 +8695,68 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &1580666779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1580666781}
+  - component: {fileID: 1580666780}
+  m_Layer: 0
+  m_Name: Polygon Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!60 &1580666780
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580666779}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.023448844, y: 0.6482675}
+      - {x: -1.0291846, y: 0.6392838}
+      - {x: -1.0294282, y: -0.5861021}
+      - {x: 1.0274569, y: -0.5841422}
+      - {x: 1.0271621, y: 0.6401804}
+--- !u!4 &1580666781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580666779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 523037369}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1586486554
 GameObject:
   m_ObjectHideFlags: 0
@@ -8915,7 +9057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15213c2ea30784742a76c6f9a676ae0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam2: {fileID: 950363315}
+  cam2: {fileID: 0}
   outsideCam: {fileID: 1166842964}
   enemies: {fileID: 1562415343}
   eToReturn: {fileID: 390619533}
@@ -11331,9 +11473,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BoundingShape2D: {fileID: 0}
+  m_BoundingShape2D: {fileID: 1580666780}
   m_Damping: 0.5
-  m_MaxWindowSize: -1
+  m_MaxWindowSize: 0
 --- !u!1 &2081587811
 GameObject:
   m_ObjectHideFlags: 0
