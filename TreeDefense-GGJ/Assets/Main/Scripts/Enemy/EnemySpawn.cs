@@ -70,6 +70,11 @@ public class EnemySpawn : MonoBehaviour
             waveInfoText.text = "Wave in progress...";
         }
 
+        if (currentWaveNum == amountOfWaves - 1)
+        {
+            print("Win");
+        }
+
         if (currentAmountOfEnemiesSpawned == totalEnemiesCurrentWave && amountOfEnemiesKilled == totalEnemiesCurrentWave)
         {
             if (doOnce)
