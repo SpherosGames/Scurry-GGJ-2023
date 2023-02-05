@@ -20,7 +20,6 @@ public class Turret : MonoBehaviour
     private void Awake()
     {
         building = GameObject.Find("Building").GetComponent<Building>();
-        print(building.name);
         nut = GameObject.Find("/Nuts").GetComponent<Nuts>();
         shellEjectPS = transform.parent.GetComponentInChildren<ParticleSystem>();
 
