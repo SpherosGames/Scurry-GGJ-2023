@@ -13,6 +13,7 @@ public class BuildInteract : MonoBehaviour
     [SerializeField] GameObject squirel;
     [SerializeField] Nuts nuts;
     [SerializeField] EnemySpawn enemySpawn;
+    [SerializeField] GameObject waveInfoText;
 
     private bool isOutside;
 
@@ -36,6 +37,7 @@ public class BuildInteract : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && interactable.enabled && isOutside == false && canUse)
         {
+            waveInfoText.SetActive(true);
             if (nuts.GetAmountOfNuts() > 0)
             {
                 enemySpawn.StartGame();

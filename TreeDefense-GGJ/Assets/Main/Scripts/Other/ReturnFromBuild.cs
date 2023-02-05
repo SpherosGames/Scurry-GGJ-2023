@@ -10,17 +10,14 @@ public class ReturnFromBuild : MonoBehaviour
     [SerializeField] GameObject enemies;
     [SerializeField] GameObject eToReturn;
     [SerializeField] GameObject squirel;
-    SpriteRenderer[] enemySprites;
     [SerializeField] BuildInteract build;
+    [SerializeField] GameObject waveInfoText;
 
     private bool canUse;
     private bool doOnce = true;
 
     private void Update()
     {
-        //print("CanUse : " + canUse);
-        //print("Do Once : " + doOnce);
-
         if (build.IsOutside())
         {
             if (doOnce)
@@ -32,6 +29,7 @@ public class ReturnFromBuild : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && build.IsOutside() && canUse)
         {
+            waveInfoText.SetActive(false);
             doOnce = true;
             canUse = false;
             print("return from outside");
